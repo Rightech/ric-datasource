@@ -8,7 +8,7 @@
         <select
           class="gf-form-input"
           ng-model="ctrl.current.url"
-          ng-options="f.value as f.text for f in [{value: 'https://app.rightech.io/api/v1/grafana', text: 'Production'}, {value: 'https://sandbox.rightech.io/api/v1/grafana', text: 'Sandbox'}]"
+          ng-options="f.value as f.text for f in [{value: 'https://app.rightech.io/api/v1/grafana', text: 'Production'}, {value: 'https://sandbox.rightech.io/api/v1/grafana', text: 'Sandbox'}, {value: 'http://192.168.1.79:3030/api/v1/grafana', text: 'Local'}]"
           ng-change="ctrl.refresh()"
         ></select>
       </div>
