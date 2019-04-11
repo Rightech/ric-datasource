@@ -1,0 +1,28 @@
+{
+  "name": "Rightech-IoT-Cloud platform",
+  "id": "grafana-ric-datasource",
+  "type": "datasource",
+
+  "metrics": true,
+  "annotations": true,
+
+  "info": {
+    "description": "Grafana datasource for rightech-iot-cloud platform",
+    "author": {
+      "name": "Rightech-IoT-Cloud",
+      "url": "https://rightech.io"
+    },
+    "links": [
+      {
+        "name": "Rightech IoT Cloud",
+        "url": "https://rightech.io"
+      }
+    ],
+    "version": "1.0.0"
+  },
+
+  "dependencies": {
+    "grafanaVersion": "6.x.x",
+    "plugins": []
+  }
+}

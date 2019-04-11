@@ -1,0 +1,38 @@
+{
+  "name": "grafana-ric-datasource",
+  "version": "1.0.0",
+  "description": "Grafana datasource for rightech-iot-cloud platform",
+  "main": "index.js",
+  "scripts": {
+    "build:dev": "$(npm bin)/webpack --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@code.rightech.io:rightech-utils/grafana-ric-datasource.git"
+  },
+  "keywords": [
+    "grafana",
+    "datasource",
+    "rightech",
+    "ric",
+    "IoT",
+    "monitoring"
+  ],
+  "author": "rightech.io",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^2.0.1",
+    "copy-webpack-plugin": "^5.0.2",
+    "css-loader": "^2.1.1",
+    "grafana-sdk-mocks": "github:grafana/grafana-sdk-mocks",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
