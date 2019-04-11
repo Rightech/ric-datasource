@@ -34,6 +34,7 @@ module.exports = {
       {from: 'plugin.json', to: '.'},
       {from: 'img/*', to: '.'},
       {from: 'partials/*', to: '.'},
+      {from: 'dashboards/*', to: '.'},
     ]),
   ],
   resolve: {

@@ -1,20 +1,16 @@
-<h3 class="page-heading">Righetch-IoT-Cloud API Details</h3>
+<h3 class="page-heading">Rightech IoT API Details</h3>
 
 <div class="gf-form-group">
   <div class="gf-form-inline">
     <div class="gf-form">
-      <span class="gf-form-label width-9">Workspace</span>
+      <span class="gf-form-label width-9">URL</span>
       <div class="gf-form-select-wrapper gf-form-select-wrapper--caret-indent">
-        <select
-          class="gf-form-input"
+        <input
+          class="gf-form-input width-30"
+          type="text"
           ng-model="ctrl.current.url"
-          ng-options="f.value as f.text for f in [{value: 'https://app.rightech.io/api/v1/grafana', text: 'Production'}, {value: 'https://sandbox.rightech.io/api/v1/grafana', text: 'Sandbox'}, {value: 'http://192.168.1.79:3030/api/v1/grafana', text: 'Local'}]"
-          ng-change="ctrl.refresh()"
-        ></select>
+        />
       </div>
-      <info-popover mode="right-normal">
-        <p>Choose an Righetch-IoT-Cloud.</p>
-      </info-popover>
     </div>
   </div>
 
@@ -27,9 +23,6 @@
         ng-model="ctrl.current.jsonData.token"
         placeholder="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
       />
-      <info-popover mode="right-absolute">
-        <p>Token auth</p>
-      </info-popover>
     </div>
   </div>
 </div>

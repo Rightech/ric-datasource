@@ -1,7 +1,7 @@
 {
   "name": "grafana-ric-datasource",
   "version": "1.0.0",
-  "description": "Grafana datasource for rightech-iot-cloud platform",
+  "description": "Grafana datasource for Rightech IoT platform",
   "main": "index.js",
   "scripts": {
     "build:dev": "$(npm bin)/webpack --mode development",

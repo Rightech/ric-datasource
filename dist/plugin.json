@@ -1,5 +1,5 @@
 {
-  "name": "Rightech-IoT-Cloud platform",
+  "name": "Rightech IoT platform",
   "id": "grafana-ric-datasource",
   "type": "datasource",
 
@@ -7,9 +7,9 @@
   "annotations": true,
 
   "info": {
-    "description": "Grafana datasource for rightech-iot-cloud platform",
+    "description": "Grafana datasource for Rightech IoT platform",
     "author": {
-      "name": "Rightech-IoT-Cloud",
+      "name": "Rightech IoT",
       "url": "https://rightech.io"
     },
     "links": [
@@ -20,6 +20,14 @@
     ],
     "version": "1.0.0"
   },
+
+  "includes": [
+    {
+      "type": "dashboard",
+      "name": "Rightech IoT Telemetry",
+      "path": "dashboards/telemetry.json"
+    }
+  ],
 
   "dependencies": {
     "grafanaVersion": "6.x.x",

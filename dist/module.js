@@ -710,6 +710,56 @@ module.exports = function (css) {
 
 /***/ }),
 
+/***/ "./config_ctrl.js":
+/*!************************!*\
+  !*** ./config_ctrl.js ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ConfigCtrl = function ConfigCtrl($scope, $injector, $q, backendSrv, alertSrv, contextSrv, datasourceSrv) {
+  _classCallCheck(this, ConfigCtrl);
+
+  this.$q = $q;
+  this.backendSrv = backendSrv;
+  this.alertSrv = alertSrv;
+  this.validKey = false;
+  this.quotas = {}; // this.appEditCtrl.setPreUpdateHook(this.preUpdate.bind(this));
+
+  console.warn('this.appEditCtrl', this.appEditCtrl); // this.appEditCtrl.setPostUpdateHook(this.postUpdate.bind(this));
+
+  this.org = null; // this.datasourceUpgrader = new DatasourceUpgrader(contextSrv, backendSrv, $q, datasourceSrv);
+} // preUpdate() {
+//   return this.$q.resolve();
+// }
+// postUpdate() {
+//   if (!this.appModel.enabled) {
+//     return this.$q.resolve();
+//   }
+//   var self = this;
+//   return this.validateKey()
+//   .then(() => {
+//     return self.datasourceUpgrader.upgrade().then(() => {
+//       self.appEditCtrl.importDashboards().then(() => {
+//         return {
+//           url: "dashboard/db/telemetry",
+//           message: "telemetry dashboard added!"
+//         };
+//       });
+//     });
+//   });
+// }
+;
+
+ConfigCtrl.templateUrl = 'partials/config.html';
+/* harmony default export */ __webpack_exports__["default"] = (ConfigCtrl);
+
+/***/ }),
+
 /***/ "./css/query-editor.css":
 /*!******************************!*\
   !*** ./css/query-editor.css ***!
@@ -954,7 +1004,6 @@ function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConfigCtrl", function() { return GenericConfigCtrl; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QueryOptionsCtrl", function() { return GenericQueryOptionsCtrl; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnnotationsQueryCtrl", function() { return GenericAnnotationsQueryCtrl; });
 /* harmony import */ var _datasource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./datasource */ "./datasource.js");
@@ -963,16 +1012,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _query_ctrl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./query_ctrl */ "./query_ctrl.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "QueryCtrl", function() { return _query_ctrl__WEBPACK_IMPORTED_MODULE_1__["GenericDatasourceQueryCtrl"]; });
 
+/* harmony import */ var _config_ctrl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config_ctrl */ "./config_ctrl.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ConfigCtrl", function() { return _config_ctrl__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 
 
 
-var GenericConfigCtrl = function GenericConfigCtrl() {
-  _classCallCheck(this, GenericConfigCtrl);
-};
-
-GenericConfigCtrl.templateUrl = 'partials/config.html';
 
 var GenericQueryOptionsCtrl = function GenericQueryOptionsCtrl() {
   _classCallCheck(this, GenericQueryOptionsCtrl);
