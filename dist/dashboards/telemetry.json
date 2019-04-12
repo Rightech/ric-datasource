@@ -13,8 +13,7 @@
     "version": 2,
     "title": "Rightech IoT Telemetry",
     "tags": [
-        "grafana",
-        "prometheus"
+      "rightech",
     ],
     "description": "Metrics about Grafana",
     "editable": true,
@@ -69,7 +68,7 @@
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
-        "title": "Panel Title",
+        "title": "Object Telemetry",
         "tooltip": {
           "shared": true,
           "sort": 0,

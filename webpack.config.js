@@ -35,6 +35,7 @@ module.exports = {
       {from: 'img/*', to: '.'},
       {from: 'partials/*', to: '.'},
       {from: 'dashboards/*', to: '.'},
+      {from: '../README.md', to: '.'},
     ]),
   ],
   resolve: {
