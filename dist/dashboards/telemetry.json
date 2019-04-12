@@ -13,7 +13,7 @@
     "version": 2,
     "title": "Rightech IoT Telemetry",
     "tags": [
-      "rightech",
+      "rightech"
     ],
     "description": "Metrics about Grafana",
     "editable": true,
