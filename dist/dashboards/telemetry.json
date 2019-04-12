@@ -5,7 +5,7 @@
         "label": "Rightech",
         "description": "",
         "type": "datasource",
-        "pluginId": "grafana-ric-datasource",
+        "pluginId": "rightech-ric-datasource",
         "pluginName": "Rightech IoT platform"
       }
     ],

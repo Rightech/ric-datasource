@@ -1,11 +1,11 @@
-# grafana-ric-datasource
+# ric-datasource
 
 The grafana datasource for receiving telemetry from the platform RighTech IoT
 
 ### Getting start
 
 ```
-git clone https://github.com/Rightech/grafana-ric-datasource.git /var/lib/grafana/plugins/grafana-ric-datasource
+git clone https://github.com/Rightech/ric-datasource.git /var/lib/grafana/plugins/ric-datasource
 ```
 
 ### Add a new datasource

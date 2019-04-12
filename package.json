@@ -1,5 +1,5 @@
 {
-  "name": "grafana-ric-datasource",
+  "name": "ric-datasource",
   "version": "1.0.0",
   "description": "Grafana datasource for Rightech IoT platform",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@code.rightech.io:rightech-utils/grafana-ric-datasource.git"
+    "url": "git@github.com:Rightech/ric-datasource.git"
   },
   "keywords": [
     "grafana",

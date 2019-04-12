@@ -8,4 +8,4 @@ services:
     entrypoint: /bin/sleep infinity
     user: root
     volumes:
-    - ./dist:/var/lib/grafana/plugins/grafana-ric-datasource
+    - ./dist:/var/lib/grafana/plugins/ric-datasource

@@ -1,6 +1,6 @@
 {
   "name": "Rightech IoT platform",
-  "id": "grafana-ric-datasource",
+  "id": "rightech-ric-datasource",
   "type": "datasource",
 
   "metrics": true,
