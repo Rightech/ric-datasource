@@ -6,6 +6,10 @@
       <span class="gf-form-label width-9">URL</span>
       <div class="gf-form-select-wrapper gf-form-select-wrapper--caret-indent">
         <input
+          bs-typeahead="getSuggestUrls"
+          placeholder="{{ctrl.suggestUrl}}"
+          ng-pattern="/^(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/"
+          required
           class="gf-form-input width-30"
           type="text"
           ng-model="ctrl.current.url"
@@ -17,12 +21,12 @@
   <div class="gf-form-inline">
     <div class="gf-form">
       <span class="gf-form-label width-9">Token</span>
-      <input
+      <textarea rows="10"
+        ng-change="ctrl.onTokenChange($event)"
         class="gf-form-input width-30"
-        type="text"
-        ng-model="ctrl.current.jsonData.token"
-        placeholder="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
-      />
+        required
+        ng-model="ctrl.token"
+      ></textarea>
     </div>
   </div>
 </div>

@@ -4,7 +4,6 @@ export class GenericDatasource {
   constructor(instanceSettings, $q, backendSrv, templateSrv) {
     this.type = instanceSettings.type;
     this.url = instanceSettings.url;
-    this.token = instanceSettings.jsonData.token;
     this.name = instanceSettings.name;
     this.q = $q;
     this.backendSrv = backendSrv;
@@ -12,8 +11,8 @@ export class GenericDatasource {
     this.withCredentials = false;
     this.access = "proxy";
     this.headers = {
+      'Accept': 'application/json',
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.token}`,
     };
   }
 

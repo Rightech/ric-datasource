@@ -1,38 +1,27 @@
+
+const RIC_SANDBOX = 'https://sandbox.rightech.io/api/v1/grafana';
+
 class ConfigCtrl {
   constructor($scope, $injector, $q, backendSrv, alertSrv, contextSrv, datasourceSrv) {
+    this.suggestUrl = RIC_SANDBOX;
     this.$q = $q;
     this.backendSrv = backendSrv;
     this.alertSrv = alertSrv;
     this.validKey = false;
     this.quotas = {};
-    // this.appEditCtrl.setPreUpdateHook(this.preUpdate.bind(this));
-    console.warn('this.appEditCtrl', this.appEditCtrl)
-    // this.appEditCtrl.setPostUpdateHook(this.postUpdate.bind(this));
-    this.org = null;
-    // this.datasourceUpgrader = new DatasourceUpgrader(contextSrv, backendSrv, $q, datasourceSrv);
+    $scope.getSuggestUrls = () => {
+      return [RIC_SANDBOX];
+    };
   }
 
-  // preUpdate() {
-  //   return this.$q.resolve();
-  // }
+  onTokenChange() {
+    this.current.jsonData = this.current.jsonData || {};
+    this.current.secureJsonData = this.current.secureJsonData || {};
 
-  // postUpdate() {
-  //   if (!this.appModel.enabled) {
-  //     return this.$q.resolve();
-  //   }
-  //   var self = this;
-  //   return this.validateKey()
-  //   .then(() => {
-  //     return self.datasourceUpgrader.upgrade().then(() => {
-  //       self.appEditCtrl.importDashboards().then(() => {
-  //         return {
-  //           url: "dashboard/db/telemetry",
-  //           message: "telemetry dashboard added!"
-  //         };
-  //       });
-  //     });
-  //   });
-  // }
+    this.current.jsonData.httpHeaderName1 = 'Authorization';
+    this.current.secureJsonData.httpHeaderValue1 = `Bearer ${this.token}`;
+  }
+
 }
 
 ConfigCtrl.templateUrl = 'partials/config.html';
