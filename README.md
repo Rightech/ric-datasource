@@ -28,7 +28,7 @@ git clone https://github.com/Rightech/ric-datasource.git /var/lib/grafana/plugin
 ```
 npm i
 npm run build:dev
-docker-compose up
-docker compose exec -it <dockerID> grafana-server restart # for reload grafana in container
+docker-compose up -d
+docker exec -it grafana-dev grafana-server restart # for reload grafana in container
 > grafana-server restart
 ```
