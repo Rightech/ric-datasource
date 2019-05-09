@@ -32,7 +32,7 @@
     "css-loader": "^2.1.1",
     "grafana-sdk-mocks": "github:grafana/grafana-sdk-mocks",
     "style-loader": "^0.23.1",
-    "webpack": "^4.29.6",
+    "webpack": "^4.31.0",
     "webpack-cli": "^3.3.0"
   }
 }
