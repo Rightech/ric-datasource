@@ -721,39 +721,42 @@ module.exports = function (css) {
 __webpack_require__.r(__webpack_exports__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ConfigCtrl = function ConfigCtrl($scope, $injector, $q, backendSrv, alertSrv, contextSrv, datasourceSrv) {
-  _classCallCheck(this, ConfigCtrl);
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-  this.$q = $q;
-  this.backendSrv = backendSrv;
-  this.alertSrv = alertSrv;
-  this.validKey = false;
-  this.quotas = {}; // this.appEditCtrl.setPreUpdateHook(this.preUpdate.bind(this));
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-  console.warn('this.appEditCtrl', this.appEditCtrl); // this.appEditCtrl.setPostUpdateHook(this.postUpdate.bind(this));
+var RIC_SANDBOX = 'https://sandbox.rightech.io/api/v1/grafana';
 
-  this.org = null; // this.datasourceUpgrader = new DatasourceUpgrader(contextSrv, backendSrv, $q, datasourceSrv);
-} // preUpdate() {
-//   return this.$q.resolve();
-// }
-// postUpdate() {
-//   if (!this.appModel.enabled) {
-//     return this.$q.resolve();
-//   }
-//   var self = this;
-//   return this.validateKey()
-//   .then(() => {
-//     return self.datasourceUpgrader.upgrade().then(() => {
-//       self.appEditCtrl.importDashboards().then(() => {
-//         return {
-//           url: "dashboard/db/telemetry",
-//           message: "telemetry dashboard added!"
-//         };
-//       });
-//     });
-//   });
-// }
-;
+var ConfigCtrl =
+/*#__PURE__*/
+function () {
+  function ConfigCtrl($scope, $injector, $q, backendSrv, alertSrv, contextSrv, datasourceSrv) {
+    _classCallCheck(this, ConfigCtrl);
+
+    this.suggestUrl = RIC_SANDBOX;
+    this.$q = $q;
+    this.backendSrv = backendSrv;
+    this.alertSrv = alertSrv;
+    this.validKey = false;
+    this.quotas = {};
+
+    $scope.getSuggestUrls = function () {
+      return [RIC_SANDBOX];
+    };
+  }
+
+  _createClass(ConfigCtrl, [{
+    key: "onTokenChange",
+    value: function onTokenChange() {
+      this.current.jsonData = this.current.jsonData || {};
+      this.current.secureJsonData = this.current.secureJsonData || {};
+      this.current.jsonData.httpHeaderName1 = 'Authorization';
+      this.current.secureJsonData.httpHeaderValue1 = "Bearer ".concat(this.token);
+    }
+  }]);
+
+  return ConfigCtrl;
+}();
 
 ConfigCtrl.templateUrl = 'partials/config.html';
 /* harmony default export */ __webpack_exports__["default"] = (ConfigCtrl);
@@ -817,7 +820,6 @@ function () {
 
     this.type = instanceSettings.type;
     this.url = instanceSettings.url;
-    this.token = instanceSettings.jsonData.token;
     this.name = instanceSettings.name;
     this.q = $q;
     this.backendSrv = backendSrv;
@@ -825,8 +827,8 @@ function () {
     this.withCredentials = false;
     this.access = "proxy";
     this.headers = {
-      'Content-Type': 'application/json',
-      Authorization: "Bearer ".concat(this.token)
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
     };
   }
 
