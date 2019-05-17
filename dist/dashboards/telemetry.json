@@ -146,33 +146,7 @@
           "label": "param",
           "multi": false,
           "name": "param",
-          "options": [
-            {
-              "selected": true,
-              "text": "lat",
-              "value": "lat"
-            },
-            {
-              "selected": false,
-              "text": "lon",
-              "value": "lon"
-            },
-            {
-              "selected": false,
-              "text": "Онлайн",
-              "value": "online"
-            },
-            {
-              "selected": false,
-              "text": "model time",
-              "value": "model-time"
-            },
-            {
-              "selected": false,
-              "text": "qos",
-              "value": "qos"
-            }
-          ],
+          "options": [],
           "query": "param-$object",
           "refresh": 0,
           "regex": "",

@@ -18,6 +18,10 @@
         "url": "https://rightech.io"
       }
     ],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
     "version": "1.0.0",
     "updated": "2019-04-12"
   },
