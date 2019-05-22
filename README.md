@@ -19,7 +19,8 @@ git clone https://github.com/Rightech/ric-datasource.git /var/lib/grafana/plugin
 5. Enter your name, url `https://sandbox.rightech.io/api/v1/grafana` and token from step 3.
 6. `Save and Test`
 7. Import dashboard `Rightech IoT Telemetry` from tab `Dashboards`
-8. Add test device in our account. Select tab `Device` and enter `add test-device`
+8. Add test device in our account.
+9. Try example mqtt publish
 
 ### Query
 
