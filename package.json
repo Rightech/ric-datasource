@@ -4,7 +4,7 @@
   "description": "Grafana datasource for Rightech IoT platform",
   "main": "index.js",
   "scripts": {
-    "build:dev": "$(npm bin)/webpack --mode development",
+    "build": "$(npm bin)/webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

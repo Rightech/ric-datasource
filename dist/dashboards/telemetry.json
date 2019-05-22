@@ -41,7 +41,7 @@
           "current": false,
           "max": false,
           "min": false,
-          "show": true,
+          "show": false,
           "total": false,
           "values": false
         },
@@ -119,7 +119,7 @@
           "hide": 0,
           "includeAll": true,
           "label": "object",
-          "multi": false,
+          "multi": true,
           "name": "object",
           "options": [],
           "query": "object",
