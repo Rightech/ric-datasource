@@ -2,6 +2,8 @@
 
 The grafana datasource for receiving telemetry from the platform RighTech IoT
 
+![Rightech IoT Cloud Dashboard](https://raw.githubusercontent.com/Rightech/ric-datasource/master/docs/Screenshot-01.png)
+
 ### Getting start
 
 ```
@@ -10,17 +12,23 @@ git clone https://github.com/Rightech/ric-datasource.git /var/lib/grafana/plugin
 
 ### Add a new datasource
 
-...description
-...auth (or link to docs)
+1. Open https://sandbox.rightech.io/auth
+2. Auth by GitHub or Google
+3. Create token https://sandbox.rightech.io/api-tokens
+4. Create new a datasource `Rightech IoT platform` in Grafana
+5. Enter your name, url `https://sandbox.rightech.io/api/v1/grafana` and token from step 3.
+6. `Save and Test`
+7. Import dashboard `Rightech IoT Telemetry` from tab `Dashboards`
+8. Add test device in our account. Select tab `Device` and enter `add test-device`
 
 ### Query
 
 ...description
 
-#### Example
+#### Example mqtt publish
 
 ```
-... example
+mosquitto_pub -h sandbox.rightech.io -i mqtt-xxxxxxxxx-8fmeyh -t base/state/temperature -m 27 -d
 ```
 
 ### Getting start dev
