@@ -21,7 +21,7 @@
   ],
   "author": "rightech.io",
   "dependencies": {
-    "lodash": "^4.17.14"
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
