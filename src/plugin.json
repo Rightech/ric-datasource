@@ -1,41 +1,47 @@
 {
-  "name": "Rightech IoT platform",
-  "id": "rightech-ric-datasource",
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
   "type": "datasource",
-
+  "name": "Rightech IoT",
+  "id": "rightech-ric-datasource",
   "metrics": true,
-  "annotations": true,
-
   "info": {
-    "description": "Grafana datasource for Rightech IoT platform",
+    "description": "",
     "author": {
       "name": "Rightech IoT",
-      "url": "https://rightech.io"
+      "url": "https://rightech.io/"
     },
-    "links": [
-      {
-        "name": "Rightech IoT Cloud",
-        "url": "https://rightech.io"
-      }
-    ],
+    "keywords": ["rightech", "iot"],
     "logos": {
       "small": "img/logo.svg",
       "large": "img/logo.svg"
     },
-    "version": "1.0.0",
-    "updated": "2019-04-12"
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://rightech.io"
+      },
+      {
+        "name": "Github",
+        "url": "https://github.com/Rightech/ric-datasource"
+      }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
   },
-
-  "includes": [
+  "routes": [
     {
-      "type": "dashboard",
-      "name": "Rightech IoT Telemetry",
-      "path": "dashboards/telemetry.json"
+      "url": "{{.JsonData.baseUrl}}",
+      "headers": [
+        {
+          "name": "Authorization",
+          "content": "Bearer {{.SecureJsonData.token}}"
+        }
+      ]
     }
   ],
-
   "dependencies": {
-    "grafanaVersion": "6.x.x",
+    "grafanaDependency": ">=7.0.0",
     "plugins": []
   }
 }
