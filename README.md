@@ -1,7 +1,7 @@
 # ric-datasource
 
 Grafana data source plugin for Rightech IoT platform
-![Rightech IoT Explore](https://raw.githubusercontent.com/Rightech/ric-datasource/master/src/img/explore.png)
+![Rightech IoT Explore](https://raw.githubusercontent.com/Rightech/ric-datasource/master/docs/img/explore.png)
 
 ## setup
 
@@ -13,4 +13,4 @@ Grafana data source plugin for Rightech IoT platform
 
 2. Paste access token to `Token` config field
 
-![Rightech IoT Token Config](https://raw.githubusercontent.com/Rightech/ric-datasource/master/src/img/config.png)
+![Rightech IoT Token Config](https://raw.githubusercontent.com/Rightech/ric-datasource/master/docs/img/config.png)
