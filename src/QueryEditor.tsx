@@ -44,7 +44,7 @@ export class QueryEditor extends PureComponent<Props, State> {
     }
   }
 
-  onObjectsChange = (values: SelectableValue<string>[]) => {
+  onObjectsChange = (values: Array<SelectableValue<string>>) => {
     const { onChange, query, onRunQuery } = this.props;
     const ids = values.map((x) => x.value!);
 
@@ -56,7 +56,7 @@ export class QueryEditor extends PureComponent<Props, State> {
     onRunQuery();
   };
 
-  onArgumentsChange = (values: SelectableValue<string>[]) => {
+  onArgumentsChange = (values: Array<SelectableValue<string>>) => {
     const { onChange, query, onRunQuery } = this.props;
     const ids = values.map((x) => x.value!);
     this.setState({ selectedArguments: ids });
