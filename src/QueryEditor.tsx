@@ -86,7 +86,7 @@ export class QueryEditor extends PureComponent<Props, State> {
     return (
       <div>
         <div>
-          <InlineField label="Objects" required tooltip="Not used yet">
+          <InlineField label="Objects" required labelWidth={14} tooltip="Requried">
             <MultiSelect
               menuShouldPortal
               options={this.getObjectsOptions()}
@@ -97,7 +97,7 @@ export class QueryEditor extends PureComponent<Props, State> {
         </div>
 
         <div>
-          <InlineField label="Arguments" tooltip="Not used yet">
+          <InlineField label="Arguments" labelWidth={14} tooltip="Select to filter out arguments">
             <MultiSelect
               menuShouldPortal
               options={this.getArgumentsOptions()}
