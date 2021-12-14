@@ -12,6 +12,8 @@ Grafana data source plugin for Rightech IoT platform
   grafana/grafana:8.3.1
 ```
 
+[https://rightech.io/ric-datasource](https://rightech.io/ric-datasource) is a short link for latest release archive from [releases page](https://github.com/Rightech/ric-datasource/releases)
+
 ### Option 2 - Archive
 
 ```sh
