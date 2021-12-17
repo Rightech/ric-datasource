@@ -8,7 +8,7 @@ Grafana data source plugin for Rightech IoT platform
 
 ```sh
 > docker run -it -p 3000:3000 \
-  -e "GF_INSTALL_PLUGINS=https://rightech.io/ric-datasource;ric-datasource" \
+  -e "GF_INSTALL_PLUGINS=https://rightech.io/ric-datasource;rightech-ric-datasource" \
   grafana/grafana:8.3.1
 ```
 
@@ -21,7 +21,7 @@ Grafana data source plugin for Rightech IoT platform
 > wget https://github.com/Rightech/ric-datasource/releases/download/v3.1.27/rightech-ric-datasource-3.1.27.zip
 
 # system installation
-> unzip rightech-ric-datasource-3.1.27.zip -d /var/lib/grafana/plugins/
+> unzip rightech-ric-datasource-3.1.27.zip -d /var/lib/grafana/plugins
 
 # binary installation
 > unzip rightech-ric-datasource-3.1.27.zip -d ./data/plugins
@@ -33,6 +33,12 @@ Or docker installation:
 > docker run -it -p 3000:3000 \
   -v "$(pwd)"/plugins:/var/lib/grafana/plugins \
   grafana/grafana:8.3.1
+```
+
+### Option 3 - CLI
+
+```sh
+> grafana-cli --pluginUrl https://rightech.io/ric-datasource plugins install rightech-ric-datasource
 ```
 
 ## Setup
