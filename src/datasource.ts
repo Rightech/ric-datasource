@@ -47,14 +47,14 @@ export class DataSource extends DataSourceApi<RicQuery, RicDataSourceOptions> {
 
         const id = object._id;
         const name = object.name;
-        const only = ['_ts', 'time', ...params.map(({ id }) => id)];
+        const only = ['_ts', 'time', 'online', ...params.map(({ id }) => id)];
 
         const packetsUrl = this.proxyApiUrl(
           `objects/${id}/packets?${qs({ from, to, only, nolimit: true, streamed: true })}`
         );
 
         let packets: Packet[] = await getBackendSrv().get(packetsUrl);
-        packets.sort((a, b) => b.time! - a.time!);
+        packets.sort((a, b) => a.time! - b.time!);
 
         const slice = new MutableDataFrame({
           refId: target.refId,

@@ -52,3 +52,15 @@ Or docker installation:
 2. Paste access token to `Token` config field
 
 ![Rightech IoT Token Config](https://raw.githubusercontent.com/Rightech/ric-datasource/master/docs/img/config.png)
+
+
+## Development
+
+```
+> npm start
+> docker run -it -p 3000:3000 \
+  -e GF_APP_MODE=development \
+  -e GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=rightech-ric-datasource \
+  -v "$(pwd)"/dist:/var/lib/grafana/plugins/rightech-ric-datasource \
+  --name=grafana grafana/grafana:8.3.1
+```

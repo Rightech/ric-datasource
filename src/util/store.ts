@@ -61,6 +61,16 @@ export function isArgumentNode(node: ModelNode): node is ArgumentNode {
   return node.type === 'argument';
 }
 
+function getOnlineNode(): ArgumentNode {
+  return {
+    active: true,
+    dataType: 'boolean',
+    type: 'argument',
+    id: 'online',
+    name: 'online',
+  };
+}
+
 export function getArgumentsOf(ids: string[]): ArgumentNode[] {
   return ids.flatMap((objectId) => {
     const object = objects.getById(objectId);
@@ -71,7 +81,12 @@ export function getArgumentsOf(ids: string[]): ArgumentNode[] {
     if (!model) {
       return [];
     }
-    const xs = filterNodes<ArgumentNode>(model.data as any, (x) => isArgumentNode(x));
+    let xs = filterNodes<ArgumentNode>(model.data as any, (x) => isArgumentNode(x));
+
+    if (!xs.find((x) => x.id === 'online')) {
+      xs = [getOnlineNode(), ...xs];
+    }
+
     return xs;
   });
 }
