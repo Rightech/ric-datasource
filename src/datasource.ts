@@ -12,7 +12,7 @@ import { Packet } from '@rightech/api';
 
 import { RicQuery, RicDataSourceOptions } from './types';
 
-import { qs, toGrafanaDataType } from './util/misc';
+import { qs, processingEnabled, toGrafanaDataType } from './util/misc';
 import { getArgumentsOf, models, objects } from './util/store';
 
 //const DEFAULT_BASE_URL = 'https://dev.rightech.io/';
@@ -49,8 +49,11 @@ export class DataSource extends DataSourceApi<RicQuery, RicDataSourceOptions> {
         const name = object.name;
         const only = ['_ts', 'time', 'online', ...params.map(({ id }) => id)];
 
+        // TODO: bump @rightech/api for link types
+        const ofType = processingEnabled(object as any) ? 'processed' : 'telemetry';
+
         const packetsUrl = this.proxyApiUrl(
-          `objects/${id}/packets?${qs({ from, to, only, nolimit: true, streamed: true })}`
+          `objects/${id}/packets?${qs({ from, to, only, ofType, nolimit: true, streamed: true })}`
         );
 
         let packets: Packet[] = await getBackendSrv().get(packetsUrl);
@@ -94,7 +97,7 @@ export class DataSource extends DataSourceApi<RicQuery, RicDataSourceOptions> {
     if (objects.loaded) {
       return objects.all;
     }
-    const only = ['name', 'group', 'model', 'description'];
+    const only = ['name', 'group', 'model', 'links', 'description'];
     const url = this.proxyApiUrl(`objects?${qs({ only, withChildGroups: true })}`);
     const req = getBackendSrv().get(url);
     return objects.load(req);

@@ -1,5 +1,5 @@
 import { FieldType } from '@grafana/data';
-import { ArgumentDataType } from '@rightech/api';
+import { ArgumentDataType, ItemId, RicObject } from '@rightech/api';
 
 export function qs(qs: Record<string, any>) {
   const params = new URLSearchParams();
@@ -39,4 +39,11 @@ export function filterNodes<T>(node: T, filter: (n: T) => boolean = () => true) 
   const result = [] as T[];
   walkFilter(node, filter, result);
   return result;
+}
+
+export function processingEnabled(object: RicObject & { links: Record<string, { id: ItemId }[]> }) {
+  const hasActions = !!object?.links?.actions?.length;
+  const hasHandlers = !!object?.links?.handlers?.length;
+
+  return hasActions || hasHandlers;
 }
