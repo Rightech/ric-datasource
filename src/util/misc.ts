@@ -41,7 +41,10 @@ export function filterNodes<T>(node: T, filter: (n: T) => boolean = () => true) 
   return result;
 }
 
-export function processingEnabled(object: RicObject & { links: Record<string, { id: ItemId }[]> }) {
+type ObjectLink = { id: ItemId };
+type ObjectWithLinks = RicObject & { links: Record<string, ObjectLink[]> };
+
+export function processingEnabled(object: ObjectWithLinks) {
   const hasActions = !!object?.links?.actions?.length;
   const hasHandlers = !!object?.links?.handlers?.length;
 
