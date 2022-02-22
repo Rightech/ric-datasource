@@ -1,6 +1,6 @@
 {
   "name": "rightech-ric-datasource",
-  "version": "3.1.30",
+  "version": "3.1.31",
   "description": "",
   "scripts": {
     "build": "grafana-toolkit plugin:build",
