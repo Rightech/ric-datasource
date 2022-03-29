@@ -9,7 +9,7 @@ Grafana data source plugin for Rightech IoT platform
 ```sh
 > docker run -it -p 3000:3000 \
   -e "GF_INSTALL_PLUGINS=https://rightech.io/ric-datasource;rightech-ric-datasource" \
-  grafana/grafana:8.3.1
+  grafana/grafana:8.4.4
 ```
 
 [https://rightech.io/ric-datasource](https://rightech.io/ric-datasource) is a short link for latest release archive from [releases page](https://github.com/Rightech/ric-datasource/releases)
@@ -18,21 +18,21 @@ Grafana data source plugin for Rightech IoT platform
 
 ```sh
 # download latest release
-> wget https://github.com/Rightech/ric-datasource/releases/download/v3.1.31/rightech-ric-datasource-3.1.31.zip
+> wget https://github.com/Rightech/ric-datasource/releases/download/v3.1.32/rightech-ric-datasource-3.1.32.zip
 
 # system installation
-> unzip rightech-ric-datasource-3.1.31.zip -d /var/lib/grafana/plugins
+> unzip rightech-ric-datasource-3.1.32.zip -d /var/lib/grafana/plugins
 
 # binary installation
-> unzip rightech-ric-datasource-3.1.31.zip -d ./data/plugins
+> unzip rightech-ric-datasource-3.1.32.zip -d ./data/plugins
 ```
 
 Or docker installation:
 ```sh
-> unzip rightech-ric-datasource-3.1.31.zip -d ./plugins
+> unzip rightech-ric-datasource-3.1.32.zip -d ./plugins
 > docker run -it -p 3000:3000 \
   -v "$(pwd)"/plugins:/var/lib/grafana/plugins \
-  grafana/grafana:8.3.1
+  grafana/grafana:8.4.4
 ```
 
 ### Option 3 - CLI
@@ -62,5 +62,5 @@ Or docker installation:
   -e GF_APP_MODE=development \
   -e GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=rightech-ric-datasource \
   -v "$(pwd)"/dist:/var/lib/grafana/plugins/rightech-ric-datasource \
-  --name=grafana grafana/grafana:8.3.1
+  --name=grafana grafana/grafana:8.4.4
 ```

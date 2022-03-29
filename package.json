@@ -1,6 +1,6 @@
 {
   "name": "rightech-ric-datasource",
-  "version": "3.1.31",
+  "version": "3.1.32",
   "description": "",
   "scripts": {
     "build": "grafana-toolkit plugin:build",
@@ -13,14 +13,14 @@
   "author": "Oleg Prohazko",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@grafana/data": "latest",
-    "@grafana/toolkit": "latest",
-    "@grafana/ui": "latest",
-    "@grafana/runtime": "latest",
+    "@grafana/data": "^8.4.4",
+    "@grafana/runtime": "^8.4.4",
+    "@grafana/toolkit": "^8.4.4",
+    "@grafana/ui": "^8.4.4",
     "@rightech/api": "latest",
-    "@types/lodash": "latest",
     "@testing-library/jest-dom": "5.4.0",
-    "@testing-library/react": "^10.0.2"
+    "@testing-library/react": "^10.0.2",
+    "@types/lodash": "latest"
   },
   "engines": {
     "node": ">=14"
